@@ -43,7 +43,7 @@ cd YOUR_REPOSITORY_NAME_HERE
 
 > NOTE: If you see a warning message like this: `warning: You appear to have cloned an empty repository.` - that means you've successfully followed all the steps so far correctly!
 
-### Adding the AIE5 Repository as an "Upstream Remote"
+### Adding the AIE6 Repository as an "Upstream Remote"
 
 Now we're going to add the class repository as an "upstream remote". 
 
