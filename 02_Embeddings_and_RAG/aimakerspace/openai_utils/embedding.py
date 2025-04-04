@@ -20,13 +20,13 @@ class EmbeddingModel:
         openai.api_key = self.openai_api_key
         self.embeddings_model_name = embeddings_model_name
 
-    async def async_get_embeddings(self, list_of_text: List[str]) -> List[List[float]]:
+    async def async_get_embeddings(self, list_of_text: List[str],dimensions=1536) -> List[List[float]]:
         batch_size = 1024
         batches = [list_of_text[i:i + batch_size] for i in range(0, len(list_of_text), batch_size)]
         
         async def process_batch(batch):
             embedding_response = await self.async_client.embeddings.create(
-                input=batch, model=self.embeddings_model_name
+                input=batch, model=self.embeddings_model_name,dimensions=dimensions
             )
             return [embeddings.embedding for embeddings in embedding_response.data]
         
