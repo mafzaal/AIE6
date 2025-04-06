@@ -1,3 +1,4 @@
 .env
 .venv/
 02_Embeddings_and_RAG/data/llms-full.txt:Zone.Identifier
+02_Embeddings_and_RAG/data/ChronologicallyConsistentLargeLanguageModels.pdf:Zone.Identifier
