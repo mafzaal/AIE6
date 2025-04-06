@@ -25,3 +25,14 @@ class ChatOpenAI:
             return response.choices[0].message.content
 
         return response
+    
+    def parse(self, messages, **kwargs):
+        if not isinstance(messages, list):
+            raise ValueError("messages must be a list")
+        
+        client = OpenAI()
+        response = client.chat.completions.parse(
+            model=self.model_name, messages=messages, **kwargs
+        )
+
+        return response.choices[0].message.parsed
